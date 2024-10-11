@@ -1,0 +1,33 @@
+; -- START GCODE -- 
+; setup
+M82 ;absolute extrusion mode
+G21 ; Set units to millimeters
+G90 ; Set all axis to Absolute
+M82 ; Set extrusion to Absolute
+
+; heat up bed
+M107 ; Disable all fans
+M190 S55 ; Set bed temperature and wait
+G28 ; Home all axis
+
+; nozzle heating
+G1 Z5.0 ; Raise nozzle to prevent scratching of heat bed
+G1 X0 Y0 ; Move nozzle to Home before heating
+M109 S200 T0 ; Set nozzle temp and wait
+G92 E0 ; Set Extruder position to zero
+
+; Nozzle purge line along left edge of bed
+G1 Z2.0 F3000 ; Raise Z axis
+G1 X20 Y20 Z0.2 F3600.0 ; Move to purge line start position
+G1 Y220 F1500.0 E10 ; Draw first purge line
+G1 X5 F3600.0 ; Move to side
+G1 Y20 F1500.0 E20 ; Draw second purge line
+G92 E0 ; Reset Extruder
+G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
+G1 X5 Y20 Z0.2 F3600.0 ; Move over to finish nozzle wipe
+G92 E0
+
+G92 E0
+G92 E0
+
+; -- end of START GCODE -

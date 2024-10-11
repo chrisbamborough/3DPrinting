@@ -1,0 +1,15 @@
+; -- END GCODE -- 
+M107
+M83 ; Set extruder to Relative
+G1 E-5 F3000 ; Retract 5mm of filament at 50mm/s
+G90 ; Set all axis to Absolute 
+G1 X50 Y180 Z180 ; Park print head
+M106 S0 ; Set fan speed to 0
+M104 S0 ; Set bed temp to 0
+M140 S0 ; Set Nozzle temp to 0
+M84 ; Disable all stepper motors
+
+M82 ;absolute extrusion mode
+M104 S0
+
+; -- end of END GCODE -
