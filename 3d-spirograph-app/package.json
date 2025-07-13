@@ -1,0 +1,30 @@
+{
+  "name": "3d-spirograph-app",
+  "version": "1.0.0",
+  "description": "A parametric 3D spirograph generator that exports G-code for 3D printing",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "keywords": [
+    "3d",
+    "spirograph",
+    "threejs",
+    "3d-printing",
+    "gcode",
+    "parametric"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.178.0",
+    "vite": "^7.0.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
